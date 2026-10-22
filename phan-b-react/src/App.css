@@ -1,0 +1,84 @@
+.app {
+  --bg: #f4f6f8;
+  --card-bg: #ffffff;
+  --text: #222222;
+  --border: #dcdcdc;
+  --primary: #2563eb;
+  --danger: #dc2626;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: sans-serif;
+  padding-bottom: 40px;
+  transition: 0.2s;
+}
+
+.app.dark {
+  --bg: #121826;
+  --card-bg: #1f2937;
+  --text: #f3f4f6;
+  --border: #374151;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+.header {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 16px 24px; background: var(--card-bg); border-bottom: 1px solid var(--border);
+}
+.header-actions { display: flex; gap: 16px; align-items: center; }
+
+.container { max-width: 1100px; margin: 24px auto; padding: 0 16px; }
+
+.section-box {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+.section-title { margin-bottom: 12px; font-size: 18px; }
+
+/* Form thêm sách */
+.form-row { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 12px; }
+.form-group { flex: 1 1 200px; display: flex; flex-direction: column; }
+.form-group label { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
+input, select {
+  padding: 8px 10px; border: 1px solid var(--border); border-radius: 4px;
+  background: var(--bg); color: var(--text);
+}
+.error-msg { color: var(--danger); font-size: 12px; min-height: 16px; margin-top: 4px; }
+
+/* Thanh công cụ */
+.toolbar { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 12px; }
+.search-input { flex: 2 1 260px; }
+.genre-select { flex: 1 1 180px; }
+.genre-buttons { display: flex; gap: 8px; flex-wrap: wrap; }
+
+/* Dòng trạng thái */
+.status-bar { font-weight: bold; margin: 12px 0; font-size: 15px; }
+
+/* Lưới thẻ sách: 3 cột trên máy tính */
+.book-grid { display: flex; flex-wrap: wrap; gap: 16px; }
+.book-card {
+  flex: 0 0 calc(33.333% - 11px);
+  background: var(--card-bg); border: 1px solid var(--border);
+  border-radius: 8px; padding: 16px;
+  display: flex; flex-direction: column; justify-content: space-between; gap: 12px;
+}
+.book-card h3 { color: var(--primary); margin-bottom: 6px; font-size: 18px; }
+.book-meta p { font-size: 14px; line-height: 1.6; }
+.card-actions { display: flex; gap: 8px; }
+
+button { cursor: pointer; padding: 8px 14px; border-radius: 4px; border: none; font-weight: 600; }
+.btn-primary { background: var(--primary); color: #fff; }
+.btn-outline { background: var(--card-bg); border: 1px solid var(--border); color: var(--text); }
+.fav-active { background: #fee2e2; color: #dc2626; border-color: #f87171; }
+.btn-delete { background: var(--danger); color: #fff; }
+
+.footer { text-align: center; margin-top: 40px; opacity: 0.8; }
+
+/* Responsive: 1 cột trên điện thoại */
+@media (max-width: 768px) {
+  .book-card { flex: 0 0 100%; }
+}

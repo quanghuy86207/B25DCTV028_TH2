@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thư Viện Lớp Học - Phần A</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <h1>📚 Thư Viện Lớp Học</h1>
+    <div class="header-actions">
+      <span class="fav-badge">❤️ Yêu thích: <strong id="fav-count">0</strong></span>
+      <button id="theme-toggle" class="btn-outline" type="button">🌙 Tối</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Form Thêm Sách -->
+    <section class="card-section">
+      <h2>Thêm sách mới</h2>
+      <form id="add-book-form" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="title">Tên sách (*)</label>
+            <input type="text" id="title" placeholder="Nhập ít nhất 3 ký tự...">
+            <small class="error-msg" id="err-title"></small>
+          </div>
+          <div class="form-group">
+            <label for="author">Tác giả (*)</label>
+            <input type="text" id="author" placeholder="Tên tác giả...">
+            <small class="error-msg" id="err-author"></small>
+          </div>
+          <div class="form-group">
+            <label for="genre">Thể loại (*)</label>
+            <select id="genre">
+              <option value="">-- Chọn thể loại --</option>
+              <option value="Công nghệ">Công nghệ</option>
+              <option value="Văn học">Văn học</option>
+              <option value="Kỹ năng">Kỹ năng</option>
+            </select>
+            <small class="error-msg" id="err-genre"></small>
+          </div>
+          <div class="form-group">
+            <label for="year">Năm XB (*)</label>
+            <input type="number" id="year" placeholder="1900 - nay">
+            <small class="error-msg" id="err-year"></small>
+          </div>
+        </div>
+        <button type="submit" class="btn-primary">➕ Thêm sách</button>
+      </form>
+    </section>
+
+    <!-- Thanh công cụ tìm kiếm & lọc -->
+    <section class="toolbar">
+      <input type="text" id="search-input" placeholder="🔍 Tìm kiếm theo tên sách...">
+      <select id="genre-filter">
+        <option value="ALL">Tất cả thể loại</option>
+      </select>
+    </section>
+
+    <!-- Dòng trạng thái -->
+    <p id="status-bar" class="status-bar">Đang tải...</p>
+
+    <!-- Lưới thẻ sách -->
+    <section id="book-grid" class="book-grid"></section>
+  </main>
+
+  <footer class="footer">
+    <p>Bài thực hành 02 - Lập trình Web</p>
+  </footer>
+
+  <script type="module" src="./js/main.js"></script>
+</body>
+</html>
